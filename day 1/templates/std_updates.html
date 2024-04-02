@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Update </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body>
+<h1> your profile ready to be update</h1><br>
+
+<!-- display parmanently -->
+
+<div class="card">
+
+
+{% if '{{display_img}}' != "" %}
+<img src="/static/uploads/{{display_img}}" alt="image" width="30%" height="300px">
+{% endif %}
+<br>
+
+<div>
+    <form action="#" ,method="#">  
+        <br>
+
+    
+        <div class="form-group">
+            <label for="name">name</label><br>
+            {{user_name}}
+            
+        </div>
+        <br>
+    
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label><br>
+        {{user_email}}
+        </div>
+        <br>
+        <div class="form-group">
+    
+        <label for="floatingInput">mobile</label><br>
+        {{user_mobile}}
+          </div>
+    
+          <br>
+    
+          <div class="form-group">
+            <label for="floatingInput">User_Ids</label><br>
+            {{user_User_Ids}}
+          </div>
+          <br>
+    
+          <div class="form-group">
+            <label for="floatingInput">User_Dob</label><br>
+            {{User_date}}
+          </div>
+    
+
+        </form>
+</div>
+
+<div>
+    <div>
+        <br>
+        <form action="\my_profile" method="get">     
+            <h1>Go to student pannel</h1>
+        <button type="submit" class="btn btn-primary">My profile section</button> 
+    </form>
+    </div>
+
+    
+    <!-- logout-->
+
+    <form action="\" ,method="get"> 
+        <div class="form-group">
+          <label for="exampleInputEmail1"><h2>you have to logout in the website</h2></label>
+        </div>   
+        <button type="submit" class="btn btn-primary">logout</button>
+    </form>
+
+    <!-- update details-->
+    <br>
+
+    <h1>Here you have to update your password</h1>
+    <div>
+        <form action="{{ url_for('std_updates')}}" methode="POST">
+
+            <div class="form-group">
+                <label for="floatingInput">Update Password</label>
+                <br>
+                <input type="password" id="Update_Password" name="Update_Password" placeholder="Update_Password">
+              </div>
+    
+              <button type="submit" class="btn btn-primary btn-block btn-large">Update your profile </button>
+    
+        </form>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
